@@ -1,0 +1,12 @@
+<form action="{% url 'compute:vote' compute.id %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>Matrix Computation</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <input type="text" name="matrix_1" id="1" value="{{ compute.matirx_1 }}">
+    <input type="text" name="matrix_2" id="2" value="{{ compute.matirx_2 }}">
+    <input type="text" name="operation" id="op" value="sum">
+    <br>
+</fieldset>
+<input type="submit" value="Vote">
+</form>

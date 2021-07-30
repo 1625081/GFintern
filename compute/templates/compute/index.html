@@ -1,0 +1,21 @@
+{% if latest_computes_list %}
+    <ul>
+    {% for compute in latest_computes_list %}
+        <li><a href="{% url 'compute:detail' compute.id %}">{{ compute.matrix_1 }}</a></li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No Computation are available.</p>
+{% endif %}
+<form action="{% url 'compute:add' %}" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>Add Matrix Computation</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <input type="text" name="matrix_1" id="1" value="">
+    <input type="text" name="matrix_2" id="2" value="">
+    <input type="text" name="operation" id="op" value="sum">
+    <br>
+</fieldset>
+<input type="submit" value="Vote">
+</form>

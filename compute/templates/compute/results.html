@@ -1,0 +1,12 @@
+<form action="" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>Matrix Computation Results</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <input type="text" name="matrix_1" id="1" value="{{ compute.matrix_1 }}">
+    <input type="text" name="matrix_2" id="2" value="{{ compute.matrix_2 }}">
+    <input type="text" name="operation" id="op" value="{{ op.op_text }}">
+    <input type="text" name="results" id="re" value="{{ compute.result }}">
+    <br>
+</fieldset>
+</form>
