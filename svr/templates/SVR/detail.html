@@ -1,0 +1,12 @@
+<form action="" method="post">
+{% csrf_token %}
+<fieldset>
+    <legend><h1>SVR Model Fund Interest Prediction</h1></legend>
+    {% if error_message %}<p><strong>{{ error_message }}</strong></p>{% endif %}
+    <label>MSE</label>
+    <input type="text" name="mse" id="1" value="{{ model.mse }}">
+    <label>MAE</label>
+    <input type="text" name="mae" id="2" value="{{ model.mae }}">
+    <br>
+</fieldset>
+</form>

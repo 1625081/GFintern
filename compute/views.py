@@ -119,8 +119,6 @@ def vote(request, compute_id):
         compute.matrix_1 = m_1
         compute.matrix_2 = m_2
         compute.save()
-        #selected_choice.votes += 1
-        #selected_choice.save()
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.

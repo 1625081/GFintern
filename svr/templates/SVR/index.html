@@ -1,0 +1,11 @@
+<form enctype="multipart/form-data" action="{% url 'svr:add' %}" method="post">
+{% csrf_token %}
+<fieldset>
+	<label>股票Excel</label>
+	<input type="file" name="share" />
+	<br />
+	<label>基金Excel</label>
+	<input type="file" name="fund" />
+</fieldset>
+<input type="submit" value="upload"/>
+</form>
